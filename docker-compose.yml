@@ -4,12 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    pull_policy: build
     restart: always
     ports:
-      - "3003:3003"
+      - "3003:80"
     networks:
       - pi_default
+
 networks:
   pi_default:
     external: true
