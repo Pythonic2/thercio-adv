@@ -1,4 +1,4 @@
-﻿services:
+services:
   thercio-landing:
     container_name: thercio-landing
     build:
