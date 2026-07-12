@@ -1,14 +1,14 @@
 services:
-  thercio-landing:
+  thercioadv:
     build:
       context: .
       dockerfile: Dockerfile
+    pull_policy: build
     restart: always
     ports:
       - "3003:3003"
     networks:
       - pi_default
-
 networks:
   pi_default:
     external: true
