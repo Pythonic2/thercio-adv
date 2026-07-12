@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - "3003:80"
+      - "3003:3003"
     networks:
       - pi_default
 
