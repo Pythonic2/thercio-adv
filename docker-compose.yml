@@ -1,6 +1,5 @@
 services:
   thercio-landing:
-    container_name: thercio-landing
     build:
       context: .
       dockerfile: Dockerfile
