@@ -28,25 +28,33 @@
     <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.creatéElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-XXXXXXX');
     </script>
 
-    <!-- Google Ads/GA4 via gtag: opcional se não usar GTM. Troque AW-XXXXXXXXXX e G-XXXXXXXXXX. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17989911467"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'AW-XXXXXXXXXX');
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'AW-17989911467');
+
+        // Preencha com o rótulo da conversão de WhatsApp fornecido pelo Google Ads.
+        const whatsAppConversionLabel = '';
         function trackWhatsAppClick(label) {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-XXXXXXXXXX/CONVERSION_LABEL',
+            gtag('event', 'whatsapp_click', {
+                'send_to': 'AW-17989911467',
                 'event_category': 'Contato',
                 'event_label': label || 'WhatsApp'
             });
+            if (whatsAppConversionLabel) {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17989911467/' + whatsAppConversionLabel,
+                    'event_label': label || 'WhatsApp'
+                });
+            }
         }
     </script>
 
@@ -143,6 +151,45 @@
             </div>
         </section>
 
+        <section id="atendimento" aria-labelledby="atendimento-titulo" class="soft-band border-y border-gold/20 px-5 py-16 md:px-10 md:py-20">
+            <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-16">
+                <div>
+                    <p class="mb-3 text-xs font-bold uppercase tracking-[.22em] text-gold">Compromisso com você</p>
+                    <h2 id="atendimento-titulo" class="mb-8 text-3xl font-semibold leading-tight text-white md:text-4xl">Atenção pessoal em cada etapa da sua defesa.</h2>
+                    <figure class="border-l-2 border-gold pl-6">
+                        <blockquote class="font-serif text-3xl leading-tight text-white md:text-4xl">
+                            <p>“Meu trabalho não começa no processo, mas na <span class="text-gold">compreensão do problema.</span>”</p>
+                        </blockquote>
+                        <figcaption class="mt-5 text-sm font-semibold text-gold">Dr. Thercio Sampaio</figcaption>
+                    </figure>
+                    <a href="https://wa.me/5583991264320?text=Ola%2C%20gostaria%20de%20conversar%20com%20o%20Dr.%20Thercio%20sobre%20meu%20caso" target="_blank" rel="noopener" onclick="trackWhatsAppClick('atendimento_pessoal')" class="mt-8 inline-flex rounded-full border border-gold px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-gold transition hover:bg-gold hover:text-darkbg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold">Converse com o Dr. Thercio</a>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <article class="rounded-2xl border border-gold/30 bg-black/25 p-6 sm:col-span-2">
+                        <p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-gold">Atendimento direto</p>
+                        <h3 class="mb-2 text-xl font-semibold text-white">Seu caso, conduzido pelo próprio Dr. Thercio.</h3>
+                        <p class="text-sm leading-relaxed text-white/75">Atendimento pelo próprio Dr. Thercio, que estudará e conduzirá o seu caso.</p>
+                    </article>
+                    <article class="rounded-2xl border border-white/10 bg-black/20 p-6">
+                        <h3 class="mb-3 font-semibold text-gold">Agir com sinceridade</h3>
+                        <p class="text-sm leading-relaxed text-white/75">Uma conversa franca sobre o seu caso, as possibilidades e os próximos passos.</p>
+                    </article>
+                    <article class="rounded-2xl border border-white/10 bg-black/20 p-6">
+                        <h3 class="mb-3 font-semibold text-gold">Análise pessoal e detalhada</h3>
+                        <p class="text-sm leading-relaxed text-white/75">Análise pessoal de todos os documentos e detalhes do caso.</p>
+                    </article>
+                    <article class="rounded-2xl border border-white/10 bg-black/20 p-6">
+                        <h3 class="mb-3 font-semibold text-gold">Explicações objetivas</h3>
+                        <p class="text-sm leading-relaxed text-white/75">Orientações claras para você compreender cada etapa e as decisões da sua defesa.</p>
+                    </article>
+                    <article class="rounded-2xl border border-white/10 bg-black/20 p-6">
+                        <h3 class="mb-3 font-semibold text-gold">Atenção aos detalhes</h3>
+                        <p class="text-sm leading-relaxed text-white/75">Identificar contradições e pontos que poderiam passar despercebidos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="urgencia" class="bg-darkbg px-5 py-20 md:px-10">
             <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.05fr_.95fr] md:items-center">
                 <div>
@@ -225,8 +272,6 @@
     </footer>
 </body>
 </html>
-
-
 
 
 
